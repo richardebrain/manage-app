@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background-image: url('https://res.cloudinary.com/dmar6wa9y/image/upload/v1654164054/bg-tablet-pattern_bjmlh0.svg');
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: 90% -25%;
+}
+#cta{
+    background-image: url('https://res.cloudinary.com/dmar6wa9y/image/upload/v1654164054/bg-simplify-section-desktop_rofjkw.svg');
+    
+    background-repeat: no-repeat;
+}
+@media(max-width:576px){
+    body{
+        background-position: 50px -50px;
+        background-size: 500px;
+    }
+    #cta{
+        background-image: url('https://res.cloudinary.com/dmar6wa9y/image/upload/v1654164054/bg-simplify-section-mobile_djklff.svg');
+    }
+}
+.hamburger{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+}
+
+.harburger-top,
+.harburger-middle,
+.harburger-bottom{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: black;
+    transform: translate(0px);
+    transition:all 0.5s ;
+}
+.harburger-middle{
+    transform: translateY(7px);
+}
+.harburger-bottom{
+    transform: translateY(14px);
+}
+
+.open{
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+.open .harburger-top{
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+.open .harburger-middle{
+   display: none;
+}
+.open .harburger-bottom{
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
